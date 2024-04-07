@@ -8,6 +8,7 @@ import Firstyear from "./components/1st year/firstyear";
 import Secondyear from "./components/2nd year/secondyear";
 import Fourthyear from "./components/4th year/fourthyear";
 import CSE from "./components/3rd year/3rd cse/cse";
+import CertificationForm from "./components/certifications/certificate";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/fourthyear" element={<Fourthyear />} />
 
         <Route path="/thirdyear/csbs" element={<CSBS />} />
+        <Route path="/certificate" element={<CertificationForm />} />
         <Route path="/thirdyear/cse" element={<CSE />} />
       </Routes>
     </div>

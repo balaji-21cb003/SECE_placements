@@ -12,8 +12,8 @@ app.use(cors());
 // Connect to MongoDB
 mongoose
   .connect("mongodb://localhost:27017/softskills", {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() => {
     console.log("Connected to MongoDB");
@@ -38,6 +38,9 @@ app.post("/thirdyear/CSBS", async (req, res) => {
     grade,
     communicationLevel,
     mockInterviewLevel,
+    domain,
+    certifications,
+    internships, // Add certifications field here
   } = req.body;
   console.log(req.body);
 
@@ -52,6 +55,9 @@ app.post("/thirdyear/CSBS", async (req, res) => {
       grade,
       communicationLevel,
       mockInterviewLevel,
+      domain,
+      certifications,
+      internships, // Add certifications field here
     });
 
     // Save the new document to the database
@@ -93,6 +99,21 @@ app.put("/thirdyear/CSBS/:id", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
+//delete endpoint
+
+app.delete("/thirdyear/CSBS/:id", async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    await ThirdCsbs.findByIdAndDelete(userId);
+    res.status(204).send(); // No content success response
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 const PORT = 3001;
 
 app.listen(PORT, () => {

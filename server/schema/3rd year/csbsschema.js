@@ -31,6 +31,39 @@ const ThirdCsbsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    domain: {
+      type: String,
+      required: true,
+    },
+
+    certifications: [{
+      name: {
+        type: String,
+        required: true
+      },
+      authority: {
+        type: String,
+        required: true
+      },
+      year: {
+        type: Number,
+        required: true
+      }
+    }],
+    internships: [{
+      company: {
+        type: String,
+        required: true
+      },
+      role: {
+        type: String,
+        required: true
+      },
+      year: {
+        type: Number,
+        required: true
+      }
+    }]
   },
   { collection: "3csbs", timestamps: true }
 ); // Specify the collection name here

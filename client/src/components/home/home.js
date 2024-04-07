@@ -221,10 +221,10 @@ export default function Home() {
                 />
                 <div className="w-fit transition-all transform duration-500">
                   <h1 className="text-gray-600 dark:text-gray-200 font-bold">
-                  Dr.Arun Jeganathan
+                    Dr.Arun Jeganathan
                   </h1>
                   <p className="text-gray-400">
-                  Placement Officer
+                    Associate Director - Corporate Relations & Placements
                   </p>
                   <a className="text-xs text-gray-500 dark:text-gray-200 group-hover:opacity-100 opacity-0 transform transition-all delay-300 duration-500">
                     123@gmail.com
